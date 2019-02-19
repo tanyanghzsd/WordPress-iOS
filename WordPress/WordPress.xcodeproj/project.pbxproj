@@ -444,6 +444,7 @@
 		7320C8BD2190C9FC0082FED5 /* UITextView+SummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320C8BC2190C9FC0082FED5 /* UITextView+SummaryTests.swift */; };
 		7326718B210F75D2001FA866 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7326718D210F75D2001FA866 /* Localizable.strings */; };
 		7326A4A8221C8F4100B4EB8C /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326A4A7221C8F4100B4EB8C /* UIStackView+Subviews.swift */; };
+		7326A4AC221C971600B4EB8C /* lps_withData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7326A4AB221C971500B4EB8C /* lps_withData.json */; };
 		732A473D218787500015DA74 /* WPRichTextFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732A473C218787500015DA74 /* WPRichTextFormatterTests.swift */; };
 		732A473F21878EB10015DA74 /* WPRichContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732A473E21878EB10015DA74 /* WPRichContentViewTests.swift */; };
 		732B99172180D3A600C4EBDB /* FeatureFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B99162180D3A600C4EBDB /* FeatureFlagTests.swift */; };
@@ -518,6 +519,11 @@
 		73E8E591212CD5DD000B26A5 /* NSParagraphStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587797119B799D800E57C5A /* NSParagraphStyle+Helpers.swift */; };
 		73E8E592212CD635000B26A5 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C4EC9207C5E1900E32E4D /* UIImage+Assets.swift */; };
 		73EDC70A212E5D6700E5E3ED /* RemoteNotificationStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDC709212E5D6700E5E3ED /* RemoteNotificationStyles.swift */; };
+		73F42BAB221DBF4700F24056 /* LatestPostSummaryDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F42BAA221DBF4700F24056 /* LatestPostSummaryDataStub.swift */; };
+		73F42BBA221DCB7100F24056 /* Charts+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F42BB7221DCB7100F24056 /* Charts+Convenience.swift */; };
+		73F42BBB221DCB7100F24056 /* Charts+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F42BB8221DCB7100F24056 /* Charts+Protocols.swift */; };
+		73F42BBC221DCB7100F24056 /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F42BB9221DCB7100F24056 /* StatsBarChartView.swift */; };
+		73F42BC1221DCBB700F24056 /* LatestPostSummaryBarChartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F42BC0221DCBB700F24056 /* LatestPostSummaryBarChartConfiguration.swift */; };
 		73F6DD42212BA54700CE447D /* RichNotificationContentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F6DD41212BA54700CE447D /* RichNotificationContentFormatter.swift */; };
 		73F6DD44212C714F00CE447D /* RichNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F6DD43212C714F00CE447D /* RichNotificationViewModel.swift */; };
 		73F6DD45212C714F00CE447D /* RichNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F6DD43212C714F00CE447D /* RichNotificationViewModel.swift */; };
@@ -2331,6 +2337,7 @@
 		7326718E210F75F0001FA866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7326718F210F7601001FA866 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7326A4A7221C8F4100B4EB8C /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
+		7326A4AB221C971500B4EB8C /* lps_withData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lps_withData.json; sourceTree = "<group>"; };
 		732A473C218787500015DA74 /* WPRichTextFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPRichTextFormatterTests.swift; sourceTree = "<group>"; };
 		732A473E21878EB10015DA74 /* WPRichContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPRichContentViewTests.swift; sourceTree = "<group>"; };
 		732B99162180D3A600C4EBDB /* FeatureFlagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagTests.swift; sourceTree = "<group>"; };
@@ -2385,6 +2392,11 @@
 		73D5AC672126236600ADDDD2 /* Info-Internal.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Internal.plist"; sourceTree = "<group>"; };
 		73E40D8B21238C520012ABA6 /* Tracks+ServiceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tracks+ServiceExtension.swift"; sourceTree = "<group>"; };
 		73EDC709212E5D6700E5E3ED /* RemoteNotificationStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationStyles.swift; sourceTree = "<group>"; };
+		73F42BAA221DBF4700F24056 /* LatestPostSummaryDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestPostSummaryDataStub.swift; sourceTree = "<group>"; };
+		73F42BB7221DCB7100F24056 /* Charts+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Charts+Convenience.swift"; sourceTree = "<group>"; };
+		73F42BB8221DCB7100F24056 /* Charts+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Charts+Protocols.swift"; sourceTree = "<group>"; };
+		73F42BB9221DCB7100F24056 /* StatsBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
+		73F42BC0221DCBB700F24056 /* LatestPostSummaryBarChartConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestPostSummaryBarChartConfiguration.swift; sourceTree = "<group>"; };
 		73F6DD41212BA54700CE447D /* RichNotificationContentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichNotificationContentFormatter.swift; sourceTree = "<group>"; };
 		73F6DD43212C714F00CE447D /* RichNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichNotificationViewModel.swift; sourceTree = "<group>"; };
 		73FEC870220B358500CEF791 /* WPAccount+RestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WPAccount+RestApi.swift"; sourceTree = "<group>"; };
@@ -4540,6 +4552,7 @@
 		3792259E12F6DBCC00F2176A /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				7326A4A9221C971500B4EB8C /* Charts */,
 				98747670219638990080967F /* Extensions */,
 				98747674219644E40080967F /* Helpers */,
 				98747671219638BF0080967F /* Insights */,
@@ -5085,6 +5098,25 @@
 			path = ErrorStates;
 			sourceTree = "<group>";
 		};
+		7326A4A9221C971500B4EB8C /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				73F42BB6221DCB7100F24056 /* Abstractions */,
+				73F42BBF221DCBB700F24056 /* Configurations */,
+				7326A4AA221C971500B4EB8C /* Stubs */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		7326A4AA221C971500B4EB8C /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				73F42BAA221DBF4700F24056 /* LatestPostSummaryDataStub.swift */,
+				7326A4AB221C971500B4EB8C /* lps_withData.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		732A4738218786F30015DA74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -5257,6 +5289,24 @@
 				73E40D8B21238C520012ABA6 /* Tracks+ServiceExtension.swift */,
 			);
 			path = Tracks;
+			sourceTree = "<group>";
+		};
+		73F42BB6221DCB7100F24056 /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				73F42BB7221DCB7100F24056 /* Charts+Convenience.swift */,
+				73F42BB8221DCB7100F24056 /* Charts+Protocols.swift */,
+				73F42BB9221DCB7100F24056 /* StatsBarChartView.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		73F42BBF221DCBB700F24056 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				73F42BC0221DCBB700F24056 /* LatestPostSummaryBarChartConfiguration.swift */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		740C7C51202F50A3001C31B0 /* Shared UI */ = {
@@ -8554,6 +8604,7 @@
 				B51AD77B2056C31100A6C545 /* LoginEpilogue.storyboard in Resources */,
 				D82253E6219956540014D0E2 /* AddressCell.xib in Resources */,
 				9895B6E021ED49160053D370 /* TopTotalsCell.xib in Resources */,
+				7326A4AC221C971600B4EB8C /* lps_withData.json in Resources */,
 				430693741DD25F31009398A2 /* PostPost.storyboard in Resources */,
 				98563DDE21BF30C40006F5E9 /* TabbedTotalsCell.xib in Resources */,
 				5DFA7EC81AF814E40072023B /* PageListTableViewCell.xib in Resources */,
@@ -9356,6 +9407,7 @@
 				9A162F2521C26F5F00FDC035 /* UIViewController+ChildViewController.swift in Sources */,
 				086C4D101E81F9240011D960 /* Media+Blog.swift in Sources */,
 				08216FCB1CDBF96000304BA7 /* MenuItemEditingHeaderView.m in Sources */,
+				73F42BBA221DCB7100F24056 /* Charts+Convenience.swift in Sources */,
 				17BD4A0820F76A4700975AC3 /* Routes+Banners.swift in Sources */,
 				1702BBDC1CEDEA6B00766A33 /* BadgeLabel.swift in Sources */,
 				4388FEFE20A4E0B900783948 /* NotificationsViewController+AppRatings.swift in Sources */,
@@ -9599,6 +9651,7 @@
 				E14A52371E39F43E00EE203E /* AppRatingsUtility.swift in Sources */,
 				8350E49611D2C71E00A7B073 /* Media.m in Sources */,
 				D8B9B58F204F4EA1003C6042 /* NetworkAware.swift in Sources */,
+				73F42BC1221DCBB700F24056 /* LatestPostSummaryBarChartConfiguration.swift in Sources */,
 				B54346961C6A707D0010B3AD /* LanguageViewController.swift in Sources */,
 				43D74AD020F906EE004AD934 /* InlineEditableNameValueCell.swift in Sources */,
 				D8A3A5B3206A49BF00992576 /* StockPhotosMedia.swift in Sources */,
@@ -9931,6 +9984,7 @@
 				D8281CF1212AB34C00D09098 /* NewsStats.swift in Sources */,
 				E1CFC1571E0AC8FF001DF9E9 /* Pattern.swift in Sources */,
 				930F09171C7D110E00995926 /* ShareExtensionService.swift in Sources */,
+				73F42BBC221DCB7100F24056 /* StatsBarChartView.swift in Sources */,
 				7ECD5B8120C4D823001AEBC5 /* MediaPreviewHelper.swift in Sources */,
 				177E7DAD1DD0D1E600890467 /* UINavigationController+SplitViewFullscreen.swift in Sources */,
 				7E3E7A6220E44E6A0075D159 /* BodyContentGroup.swift in Sources */,
@@ -10164,6 +10218,7 @@
 				E174F6E6172A73960004F23A /* WPAccount.m in Sources */,
 				E1718EA01CAD0800006F9E2D /* HockeyManager.m in Sources */,
 				FF619DD51C75246900903B65 /* CLPlacemark+Formatting.swift in Sources */,
+				73F42BAB221DBF4700F24056 /* LatestPostSummaryDataStub.swift in Sources */,
 				E11450DF1C4E47E600A6BD0F /* NoticeAnimator.swift in Sources */,
 				7E14635720B3BEAB00B95F41 /* WPStyleGuide+Loader.swift in Sources */,
 				087EBFA81F02313E001F7ACE /* MediaThumbnailService.swift in Sources */,
@@ -10255,6 +10310,7 @@
 				7E7947A9210BAC1D005BB851 /* NotificationContentRange.swift in Sources */,
 				E1EBC36F1C118EA500F638E0 /* ImmuTable.swift in Sources */,
 				B59B18751CC7FB8D0055EB7C /* PersonViewController.swift in Sources */,
+				73F42BBB221DCB7100F24056 /* Charts+Protocols.swift in Sources */,
 				40D7823A206AEA880015A3A1 /* Scheduler.swift in Sources */,
 				436D562E2117347C00CEAA33 /* RegisterDomainDetailsViewModel+RowDefinitions.swift in Sources */,
 				E6FACB1E1EC675E300284AC7 /* GravatarProfile.swift in Sources */,
