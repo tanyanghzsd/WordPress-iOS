@@ -449,6 +449,7 @@
 		732A473F21878EB10015DA74 /* WPRichContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732A473E21878EB10015DA74 /* WPRichContentViewTests.swift */; };
 		732B99172180D3A600C4EBDB /* FeatureFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732B99162180D3A600C4EBDB /* FeatureFlagTests.swift */; };
 		73302089222E00590071F6EE /* dwmy_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 73302088222E00590071F6EE /* dwmy_data.json */; };
+		7330208D222E04CD0071F6EE /* DaysWeeksMonthsYearsDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330208C222E04CD0071F6EE /* DaysWeeksMonthsYearsDataStub.swift */; };
 		7335AC5821220AB40012EF2D /* FormattableContentGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4123AD20F4097900DF8486 /* FormattableContentGroup.swift */; };
 		7335AC5921220AC40012EF2D /* FormattableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4123B220F4097A00DF8486 /* FormattableContent.swift */; };
 		7335AC5A21220AD10012EF2D /* FormattableContentRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4123B420F4097A00DF8486 /* FormattableContentRange.swift */; };
@@ -2369,6 +2370,7 @@
 		732D4E1E212625A100BF7F11 /* WordPressNotificationContentExtension-Alpha.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "WordPressNotificationContentExtension-Alpha.entitlements"; sourceTree = "<group>"; };
 		732D4E1F212625A100BF7F11 /* WordPressNotificationContentExtension-Internal.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "WordPressNotificationContentExtension-Internal.entitlements"; sourceTree = "<group>"; };
 		73302088222E00590071F6EE /* dwmy_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dwmy_data.json; sourceTree = "<group>"; };
+		7330208C222E04CD0071F6EE /* DaysWeeksMonthsYearsDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysWeeksMonthsYearsDataStub.swift; sourceTree = "<group>"; };
 		7335AC5F21220D550012EF2D /* RemoteNotificationActionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationActionParser.swift; sourceTree = "<group>"; };
 		733F36032126197800988727 /* WordPressNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WordPressNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		733F36052126197800988727 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -5334,6 +5336,7 @@
 		73FF7035221F4C9400541798 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				7330208C222E04CD0071F6EE /* DaysWeeksMonthsYearsDataStub.swift */,
 				73FF7037221F4C9400541798 /* PostSummaryDataStub.swift */,
 				73302088222E00590071F6EE /* dwmy_data.json */,
 				73F76E1A222754AE00FDDAD2 /* latestPost_data.json */,
@@ -10051,6 +10054,7 @@
 				B5D889411BEBE30A007C4684 /* BlogSettings.swift in Sources */,
 				5DF7F7781B223916003A05C8 /* PostToPost30To31.m in Sources */,
 				738B9A5621B85CF20005062B /* ModelSettableCell.swift in Sources */,
+				7330208D222E04CD0071F6EE /* DaysWeeksMonthsYearsDataStub.swift in Sources */,
 				1746D7771D2165AE00B11D77 /* ForcePopoverPresenter.swift in Sources */,
 				D858F30120E20106007E8A1C /* LikePost.swift in Sources */,
 				1703D04C20ECD93800D292E9 /* Routes+Post.swift in Sources */,
