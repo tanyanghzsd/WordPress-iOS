@@ -136,9 +136,14 @@ class StatsBarChartView: BarChartView {
     private func configureAndPopulateData() {
         let barChartData = self.barChartData.barChartData
 
+        var barColors: [NSUIColor] = [ styling.primaryBarColor ]
+        if let secondaryBarColor = styling.secondaryBarColor {
+            barColors.append(secondaryBarColor)
+        }
+
         if let dataSets = barChartData.dataSets as? [BarChartDataSet] {
             for dataSet in dataSets {
-                dataSet.colors = [ styling.barColor ]
+                dataSet.colors = barColors
 
                 dataSet.drawValuesEnabled = false
 

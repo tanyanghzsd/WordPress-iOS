@@ -22,8 +22,11 @@ extension BarChartDataSet {
 ///
 protocol BarChartStyling {
 
-    /// This corresponds to the bar color
-    var barColor: UIColor { get }
+    /// This corresponds to the primary bar color.
+    var primaryBarColor: UIColor { get }
+
+    /// This bar color is used if bars are overlayed.
+    var secondaryBarColor: UIColor? { get }
 
     /// This corresponds to the color of a selected bar
     var highlightColor: UIColor? { get }

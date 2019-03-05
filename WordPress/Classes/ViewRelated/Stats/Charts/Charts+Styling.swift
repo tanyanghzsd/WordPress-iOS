@@ -6,7 +6,8 @@ import Charts
 // MARK: - PostSummaryStyling
 
 class PostSummaryStyling: BarChartStyling {
-    let barColor: UIColor
+    var primaryBarColor: UIColor
+    var secondaryBarColor: UIColor?
     let highlightColor: UIColor?
     let labelColor: UIColor
     let lineColor: UIColor
@@ -14,7 +15,8 @@ class PostSummaryStyling: BarChartStyling {
     let yAxisValueFormatter: IAxisValueFormatter
 
     init(barColor: UIColor, highlightColor: UIColor?, labelColor: UIColor, lineColor: UIColor, xAxisValueFormatter: IAxisValueFormatter, yAxisValueFormatter: IAxisValueFormatter) {
-        self.barColor               = barColor
+        self.primaryBarColor        = barColor
+        self.secondaryBarColor      = nil
         self.highlightColor         = highlightColor
         self.labelColor             = labelColor
         self.lineColor              = lineColor
