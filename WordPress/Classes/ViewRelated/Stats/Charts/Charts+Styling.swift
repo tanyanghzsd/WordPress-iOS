@@ -3,13 +3,18 @@ import Foundation
 
 import Charts
 
+// MARK: - PeriodPerformanceStyling
+
+//class PeriodPerformanceStyling: BarChartStyling {}
+
 // MARK: - PostSummaryStyling
 
 class PostSummaryStyling: BarChartStyling {
-    var primaryBarColor: UIColor
-    var secondaryBarColor: UIColor?
+    let primaryBarColor: UIColor
+    let secondaryBarColor: UIColor?
     let highlightColor: UIColor?
     let labelColor: UIColor
+    let legendTitle: String?
     let lineColor: UIColor
     let xAxisValueFormatter: IAxisValueFormatter
     let yAxisValueFormatter: IAxisValueFormatter
@@ -19,6 +24,7 @@ class PostSummaryStyling: BarChartStyling {
         self.secondaryBarColor      = nil
         self.highlightColor         = highlightColor
         self.labelColor             = labelColor
+        self.legendTitle            = nil
         self.lineColor              = lineColor
         self.xAxisValueFormatter    = xAxisValueFormatter
         self.yAxisValueFormatter    = yAxisValueFormatter

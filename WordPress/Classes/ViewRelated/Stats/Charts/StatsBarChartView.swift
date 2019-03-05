@@ -50,6 +50,8 @@ class StatsBarChartView: BarChartView {
         configureBarLineChartViewBaseProperties()
         configureChartViewBaseProperties()
 
+        configureLegend()
+
         configureXAxis()
         configureYAxis()
     }
@@ -104,10 +106,68 @@ class StatsBarChartView: BarChartView {
 
         extraRightOffset = CGFloat(20)
 
-        legend.enabled = false
-
         let animationDuration = TimeInterval(1)
         animate(yAxisDuration: animationDuration)
+    }
+
+    private func configureLegend() {
+        guard let _ = styling.legendTitle else {
+            legend.enabled = false
+            return
+        }
+
+//        public enum Form: Int
+//        {
+//            /// Avoid drawing a form
+//            case none
+//
+//            /// Do not draw the a form, but leave space for it
+//            case empty
+//
+//            /// Use default (default dataset's form to the legend's form)
+//            case `default`
+//
+//            /// Draw a square
+//            case square
+//
+//            /// Draw a circle
+//            case circle
+//
+//            /// Draw a horizontal line
+//            case line
+//        }
+//
+//        @objc(ChartLegendHorizontalAlignment)
+//        public enum HorizontalAlignment: Int
+//        {
+//            case left
+//            case center
+//            case right
+//        }
+//
+//        @objc(ChartLegendVerticalAlignment)
+//        public enum VerticalAlignment: Int
+//        {
+//            case top
+//            case center
+//            case bottom
+//        }
+//
+//        @objc(ChartLegendOrientation)
+//        public enum Orientation: Int
+//        {
+//            case horizontal
+//            case vertical
+//        }
+//
+//        @objc(ChartLegendDirection)
+//        public enum Direction: Int
+//        {
+//            case leftToRight
+//            case rightToLeft
+//        }
+//
+//        entries = [LegendEntry]()
     }
 
     private func configureXAxis() {
