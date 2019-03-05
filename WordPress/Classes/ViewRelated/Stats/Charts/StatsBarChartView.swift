@@ -11,7 +11,7 @@ class StatsBarChartView: BarChartView {
 
     private struct Constants {
         static let intrinsicHeight  = CGFloat(170)   // height via Zeplin
-        static let highlightAlpha   = CGFloat(0.1)
+        static let markerAlpha   = CGFloat(0.1)
     }
 
     private let barChartData: BarChartDataConvertible
@@ -160,7 +160,7 @@ class StatsBarChartView: BarChartView {
         let marker = StatsBarChartMarker(frame: markerRect)
         marker.offset = markerOffset
 
-        let markerColor = (styling.highlightColor ?? UIColor.clear).withAlphaComponent(Constants.highlightAlpha)
+        let markerColor = (styling.highlightColor ?? UIColor.clear).withAlphaComponent(Constants.markerAlpha)
         marker.backgroundColor = markerColor
 
         self.marker = marker
