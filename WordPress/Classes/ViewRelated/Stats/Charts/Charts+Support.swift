@@ -34,8 +34,8 @@ protocol BarChartStyling {
     /// This corresponds to the color of labels on the chart
     var labelColor: UIColor { get }
 
-    /// If specified, a legend will be presented with this value.
-    var legendTitle: String? { get }
+    /// If true, a legend will be presented with this value.
+    var legendEnabled: Bool { get }
 
     /// This corresponds to the color of lines on the chart
     var lineColor: UIColor { get }

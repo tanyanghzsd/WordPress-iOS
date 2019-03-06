@@ -58,15 +58,15 @@
     {
         "date": "2019-02-27",
         "viewCount": 6300,
-        "visitorCount": 0,
-        "likeCount": 63,
-        "commentCount": 6
+        "visitorCount": 5000,
+        "likeCount": 50,
+        "commentCount": 5
     },
     {
         "date": "2019-02-28",
         "viewCount": 6000,
-        "visitorCount": 0,
-        "likeCount": 60,
-        "commentCount": 6
+        "visitorCount": 4800,
+        "likeCount": 48,
+        "commentCount": 5
     }
 ]

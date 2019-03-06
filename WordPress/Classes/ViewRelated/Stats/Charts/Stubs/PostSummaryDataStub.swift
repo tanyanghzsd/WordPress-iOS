@@ -15,6 +15,18 @@ struct PostSummaryDatum: Decodable {
     }
 }
 
+// MARK: - PostSummaryDataStub
+
+class PostSummaryDataStub: DataStub<[PostSummaryDatum]> {
+    init(fileName: String) {
+        super.init([PostSummaryDatum].self, fileName: fileName)
+    }
+
+    var summaryData: [PostSummaryDatum] {
+        return data as? [PostSummaryDatum] ?? []
+    }
+}
+
 // MARK: - LatestPostSummaryDataStub
 
 class LatestPostSummaryDataStub: PostSummaryDataStub {
@@ -31,31 +43,12 @@ class SelectedPostSummaryDataStub: PostSummaryDataStub {
     }
 }
 
-/// Stub structure informed by https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/post/%24post_id/
-/// Values approximate what's depicted in Zeplin
-///
-class PostSummaryDataStub {
-
-    private(set) var data: [PostSummaryDatum]
-
-    init(fileName: String) {
-        let bundle = Bundle(for: type(of: self))
-
-        let decoder = StubDataJSONDecoder()
-        guard let jsonData = bundle.jsonData(from: fileName),
-            let decoded = try? decoder.decode([PostSummaryDatum].self, from: jsonData) else {
-
-            fatalError("Failed to decode data from \(fileName).json")
-        }
-
-        self.data = decoded
-    }
-}
-
 // MARK: - BarChartDataConvertible
 
 extension PostSummaryDataStub: BarChartDataConvertible {
     var barChartData: BarChartData {
+
+        let data = summaryData
 
         // Our stub data is ordered
         let firstDateInterval: TimeInterval
@@ -100,7 +93,7 @@ extension PostSummaryDataStub: BarChartDataConvertible {
 
 extension PostSummaryStyling {
     convenience init(initialDateInterval: TimeInterval, highlightColor: UIColor? = nil) {
-        let xAxisFormatter = PostSummaryHorizontalAxisFormatter(initialDateInterval: initialDateInterval)
+        let xAxisFormatter = HorizontalAxisFormatter(initialDateInterval: initialDateInterval)
 
         self.init(
             barColor: WPStyleGuide.wordPressBlue(),
@@ -108,7 +101,7 @@ extension PostSummaryStyling {
             labelColor: WPStyleGuide.grey(),
             lineColor: WPStyleGuide.greyLighten30(),
             xAxisValueFormatter: xAxisFormatter,
-            yAxisValueFormatter: PostSummaryVerticalAxisFormatter())
+            yAxisValueFormatter: VerticalAxisFormatter())
     }
 }
 

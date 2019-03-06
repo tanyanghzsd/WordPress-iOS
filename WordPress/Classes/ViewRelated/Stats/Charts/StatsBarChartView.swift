@@ -111,63 +111,8 @@ class StatsBarChartView: BarChartView {
     }
 
     private func configureLegend() {
-        guard let _ = styling.legendTitle else {
-            legend.enabled = false
-            return
-        }
-
-//        public enum Form: Int
-//        {
-//            /// Avoid drawing a form
-//            case none
-//
-//            /// Do not draw the a form, but leave space for it
-//            case empty
-//
-//            /// Use default (default dataset's form to the legend's form)
-//            case `default`
-//
-//            /// Draw a square
-//            case square
-//
-//            /// Draw a circle
-//            case circle
-//
-//            /// Draw a horizontal line
-//            case line
-//        }
-//
-//        @objc(ChartLegendHorizontalAlignment)
-//        public enum HorizontalAlignment: Int
-//        {
-//            case left
-//            case center
-//            case right
-//        }
-//
-//        @objc(ChartLegendVerticalAlignment)
-//        public enum VerticalAlignment: Int
-//        {
-//            case top
-//            case center
-//            case bottom
-//        }
-//
-//        @objc(ChartLegendOrientation)
-//        public enum Orientation: Int
-//        {
-//            case horizontal
-//            case vertical
-//        }
-//
-//        @objc(ChartLegendDirection)
-//        public enum Direction: Int
-//        {
-//            case leftToRight
-//            case rightToLeft
-//        }
-//
-//        entries = [LegendEntry]()
+        legend.verticalAlignment = .top
+        legend.enabled = styling.legendEnabled
     }
 
     private func configureXAxis() {
@@ -193,29 +138,48 @@ class StatsBarChartView: BarChartView {
         yAxis.valueFormatter = styling.yAxisValueFormatter
     }
 
+    private func configureDataSet(dataSet: BarChartDataSet, with color: NSUIColor) {
+        dataSet.colors = [ color ]
+
+        dataSet.drawValuesEnabled = false
+
+        if let barHighlightColor = styling.highlightColor {
+            dataSet.highlightColor = barHighlightColor
+            dataSet.highlightEnabled = true
+            dataSet.highlightAlpha = CGFloat(1)
+        } else {
+            highlightPerTapEnabled = false
+        }
+    }
+
     private func configureAndPopulateData() {
         let barChartData = self.barChartData.barChartData
 
-        var barColors: [NSUIColor] = [ styling.primaryBarColor ]
-        if let secondaryBarColor = styling.secondaryBarColor {
-            barColors.append(secondaryBarColor)
+        guard let dataSets = barChartData.dataSets as? [BarChartDataSet], let initialDataSet = dataSets.first else {
+            return
         }
+        configureDataSet(dataSet: initialDataSet, with: styling.primaryBarColor)
 
-        if let dataSets = barChartData.dataSets as? [BarChartDataSet] {
-            for dataSet in dataSets {
-                dataSet.colors = barColors
+//        var barColors: [NSUIColor] = [ styling.primaryBarColor ]
+//        if let secondaryBarColor = styling.secondaryBarColor {
+//            barColors.append(secondaryBarColor)
+//        }
 
-                dataSet.drawValuesEnabled = false
-
-                if let barHighlightColor = styling.highlightColor {
-                    dataSet.highlightColor = barHighlightColor
-                    dataSet.highlightEnabled = true
-                    dataSet.highlightAlpha = CGFloat(1)
-                } else {
-                    highlightPerTapEnabled = false
-                }
-            }
-        }
+//        if let dataSets = barChartData.dataSets as? [BarChartDataSet] {
+//            for dataSet in dataSets {
+//                dataSet.colors = barColors
+//
+//                dataSet.drawValuesEnabled = false
+//
+//                if let barHighlightColor = styling.highlightColor {
+//                    dataSet.highlightColor = barHighlightColor
+//                    dataSet.highlightEnabled = true
+//                    dataSet.highlightAlpha = CGFloat(1)
+//                } else {
+//                    highlightPerTapEnabled = false
+//                }
+//            }
+//        }
 
         data = barChartData
     }
@@ -263,7 +227,6 @@ class StatsBarChartView: BarChartView {
 private typealias StatsBarChartMarker = MarkerView
 
 extension StatsBarChartView: ChartViewDelegate {
-
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         drawChartMarker(for: entry)
     }

@@ -21,11 +21,30 @@ extension Bundle {
 
 // MARK: - StubData
 
+/// Stub structure informed by https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/post/%24post_id/
+/// Values approximate what's depicted in Zeplin
+///
+class DataStub<T: Decodable> {
 
+    private(set) var data: Decodable
+
+    init<T: Decodable>(_ type: T.Type, fileName: String) {
+        let bundle = Bundle.main
+        let decoder = StubDataJSONDecoder()
+
+        guard let jsonData = bundle.jsonData(from: fileName),
+            let decoded = try? decoder.decode(T.self, from: jsonData) else {
+
+            fatalError("Failed to decode data from \(fileName).json")
+        }
+
+        self.data = decoded
+    }
+}
 
 // MARK: - StubDataDateFormatter
 
-class StubDataDateFormatter: DateFormatter {
+private class StubDataDateFormatter: DateFormatter {
     override init() {
         super.init()
 
@@ -40,7 +59,7 @@ class StubDataDateFormatter: DateFormatter {
 
 // MARK: - StubDataJSONDecoder
 
-class StubDataJSONDecoder: JSONDecoder {
+private class StubDataJSONDecoder: JSONDecoder {
     override init() {
         super.init()
 
