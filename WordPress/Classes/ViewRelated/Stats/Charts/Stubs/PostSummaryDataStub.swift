@@ -36,30 +36,16 @@ class SelectedPostSummaryDataStub: PostSummaryDataStub {
 ///
 class PostSummaryDataStub {
 
-    private static let jsonFileExtension = "json"
-
     private(set) var data: [PostSummaryDatum]
 
     init(fileName: String) {
         let bundle = Bundle(for: type(of: self))
 
-        guard let url = bundle.url(
-            forResource: fileName,
-            withExtension: PostSummaryDataStub.jsonFileExtension) else {
+        let decoder = StubDataJSONDecoder()
+        guard let jsonData = bundle.jsonData(from: fileName),
+            let decoded = try? decoder.decode([PostSummaryDatum].self, from: jsonData) else {
 
-            fatalError("Failed to locate \(fileName).\(PostSummaryDataStub.jsonFileExtension) in bundle.")
-        }
-
-        guard let jsonData = try? Data(contentsOf: url) else {
-            fatalError("Failed to parse \(fileName).\(PostSummaryDataStub.jsonFileExtension) as Data.")
-        }
-
-        let decoder = JSONDecoder()
-        let dateFormatter = PostSummaryDateFormatter()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-
-        guard let decoded = try? decoder.decode([PostSummaryDatum].self, from: jsonData) else {
-            fatalError("Failed to decode \(fileName).\(PostSummaryDataStub.jsonFileExtension) from data")
+            fatalError("Failed to decode data from \(fileName).json")
         }
 
         self.data = decoded
@@ -107,21 +93,6 @@ extension PostSummaryDataStub: BarChartDataConvertible {
         chartData.barWidth = effectiveWidth
 
         return chartData
-    }
-}
-
-// MARK: - PostSummaryDateFormatter
-
-private class PostSummaryDateFormatter: DateFormatter {
-    override init() {
-        super.init()
-
-        self.locale = Locale(identifier: "en_US_POSIX")
-        self.dateFormat = "yyyy-MM-dd"
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
