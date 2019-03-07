@@ -11,7 +11,7 @@ class PeriodPerformanceStyling: BarChartStyling {
     let secondaryBarColor: UIColor?
     let highlightColor: UIColor?
     let labelColor: UIColor
-    let legendEnabled: Bool
+    let legendTitle: String?
     let lineColor: UIColor
     let xAxisValueFormatter: IAxisValueFormatter
     let yAxisValueFormatter: IAxisValueFormatter
@@ -23,7 +23,7 @@ class PeriodPerformanceStyling: BarChartStyling {
         self.secondaryBarColor      = WPStyleGuide.darkBlue()
         self.highlightColor         = WPStyleGuide.jazzyOrange()
         self.labelColor             = WPStyleGuide.grey()
-        self.legendEnabled          = true
+        self.legendTitle            = "Visitors"    // we do not localized stub data...
         self.lineColor              = WPStyleGuide.greyLighten30()
         self.xAxisValueFormatter    = xAxisFormatter
         self.yAxisValueFormatter    = VerticalAxisFormatter()
@@ -38,7 +38,7 @@ class PostSummaryStyling: BarChartStyling {
     let secondaryBarColor: UIColor?
     let highlightColor: UIColor?
     let labelColor: UIColor
-    let legendEnabled: Bool
+    let legendTitle: String?
     let lineColor: UIColor
     let xAxisValueFormatter: IAxisValueFormatter
     let yAxisValueFormatter: IAxisValueFormatter
@@ -48,7 +48,7 @@ class PostSummaryStyling: BarChartStyling {
         self.secondaryBarColor      = nil
         self.highlightColor         = highlightColor
         self.labelColor             = labelColor
-        self.legendEnabled          = false
+        self.legendTitle            = nil
         self.lineColor              = lineColor
         self.xAxisValueFormatter    = xAxisValueFormatter
         self.yAxisValueFormatter    = yAxisValueFormatter
